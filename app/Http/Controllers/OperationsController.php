@@ -17,4 +17,16 @@ class OperationsController extends Controller
 
         return ['result' => $result];
     }
+
+    public function multiply(Request $request)
+    {
+        $request->validate([
+            'number_1' => 'required|numeric',
+            'number_2' => 'required|numeric',
+        ]);
+
+        $result = $request->input('number_1') * $request->input('number_2');
+
+        return ['result' => $result];
+    }
 }

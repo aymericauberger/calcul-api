@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('add', [OperationsController::class, 'add']);
+
+Route::post('multiply', [OperationsController::class, 'multiply']);
