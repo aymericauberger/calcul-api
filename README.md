@@ -4,7 +4,7 @@ L'API pour tous vos calculs !
 
 ## Fonctionnalités
 
-- [ ] Addition
+- [x] Addition
 
 ```
 POST /api/add
@@ -16,7 +16,7 @@ POST /api/add
 RESPONSE: { "result": 5 }
 ```
 
-- [ ] Multiplication
+- [x] Multiplication
 
 ```
 POST /api/multiply
@@ -27,3 +27,16 @@ POST /api/multiply
 
 RESPONSE: { "result": 6 }
 ```
+
+## Énoncé
+
+- Ajouter et documenter les fonctionnalités suivantes :
+
+- [ ] Soustraction
+- [ ] Division
+
+- Pour l'addition et la multiplication, ajouter la possibilité d'envoyer un tableau `"numbers": [x, y, z]`, et d'obtenir la somme / le produit de tous ces nombres (tout en gardant la compatibilité avec les fonctionnalités existantes).
+
+- Ajouter une fonctionnalité permettant de combiner à l'infini des opérations, par exemple :
+
+`[[34, '+', 32], '/', 3]` => doit renvoyer 22
