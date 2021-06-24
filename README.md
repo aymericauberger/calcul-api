@@ -28,6 +28,32 @@ POST /api/multiply
 RESPONSE: { "result": 6 }
 ```
 
+
+- [x] Soustraction
+
+```
+POST /api/subtraction
+{
+    "number_1": 2
+    "number_2": 3
+}
+
+RESPONSE: { "result": 1 }
+```
+
+- [x] Division
+
+```
+POST /api/division
+{
+    "number_1": 6
+    "number_2": 2
+}
+
+RESPONSE: { "result": 3 }
+```
+
+
 ## Énoncé
 
 - Ajouter et documenter les fonctionnalités suivantes :
