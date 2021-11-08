@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InfiniteOperationsAction;
 use App\Http\Controllers\OperationsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,5 @@ Route::post('multiply', [OperationsController::class, 'multiply']);
 Route::post('substract', [OperationsController::class, 'substract']);
 
 Route::post('divide', [OperationsController::class, 'divide']);
+
+Route::post('multiple-operations', InfiniteOperationsAction::class);
