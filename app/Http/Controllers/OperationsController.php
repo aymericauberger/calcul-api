@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use App\Http\Requests\SubstractRequest;
 
 class OperationsController extends Controller
 {
@@ -28,5 +30,10 @@ class OperationsController extends Controller
         $result = $request->input('number_1') * $request->input('number_2');
 
         return ['result' => $result];
+    }
+
+    public function substract(SubstractRequest $request): JsonResponse
+    {
+        return response()->json(['result' => $request->input('number_1') - $request->input('number_2')]);
     }
 }
