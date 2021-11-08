@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AddRequest;
 use App\Http\Requests\SubstractRequest;
 use App\Http\Requests\DivideRequest;
+use App\Http\Requests\MultiplyRequest;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 
 class OperationsController extends Controller
@@ -20,16 +20,13 @@ class OperationsController extends Controller
         return response()->json(['result' => $request->input('number_1') + $request->input('number_2')]);
     }
 
-    public function multiply(Request $request)
+    public function multiply(MultiplyRequest $request): JsonResponse
     {
-        $request->validate([
-            'number_1' => 'required|numeric',
-            'number_2' => 'required|numeric',
-        ]);
+        if ($request->input('numbers')) {
+            return response()->json(['result' => array_product($request->input('numbers'))]);
+        }
 
-        $result = $request->input('number_1') * $request->input('number_2');
-
-        return ['result' => $result];
+        return response()->json(['result' => $request->input('number_1') * $request->input('number_2')]);
     }
 
     public function substract(SubstractRequest $request): JsonResponse
