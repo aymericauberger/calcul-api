@@ -28,6 +28,31 @@ POST /api/multiply
 RESPONSE: { "result": 6 }
 ```
 
+- [x] Soustraction
+
+```
+POST /api/substract
+{
+    "number_1": 8
+    "number_2": 4
+}
+
+RESPONSE: { "result": 4 }
+```
+
+- [x] Division
+
+```
+POST /api/divide
+{
+    "number_1": 10
+    "number_2": 2
+}
+
+RESPONSE: { "result": 5 }
+```
+:warning: `number_2` doit être différent de zéro.
+
 ## Énoncé
 
 - Ajouter et documenter les fonctionnalités suivantes :
