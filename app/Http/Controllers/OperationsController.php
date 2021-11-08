@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
+use App\Http\Requests\AddRequest;
 use App\Http\Requests\SubstractRequest;
 use App\Http\Requests\DivideRequest;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+
 
 class OperationsController extends Controller
 {
-    public function add(Request $request)
+    public function add(AddRequest $request): JsonResponse
     {
-        $request->validate([
-            'number_1' => 'required|numeric',
-            'number_2' => 'required|numeric',
-        ]);
+        if ($request->input('numbers')) {
+            return response()->json(['result' => array_sum($request->input('numbers'))]);
+        }
 
-        $result = $request->input('number_1') + $request->input('number_2');
-
-        return ['result' => $result];
+        return response()->json(['result' => $request->input('number_1') + $request->input('number_2')]);
     }
 
     public function multiply(Request $request)
