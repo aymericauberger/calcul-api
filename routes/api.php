@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InfiniteOperationsAction;
 use App\Http\Controllers\OperationsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('add', [OperationsController::class, 'add']);
 
 Route::post('multiply', [OperationsController::class, 'multiply']);
+
+Route::post('substract', [OperationsController::class, 'substract']);
+
+Route::post('divide', [OperationsController::class, 'divide']);
+
+Route::post('infinite-operations', InfiniteOperationsAction::class);
