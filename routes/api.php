@@ -28,4 +28,4 @@ Route::post('substract', [OperationsController::class, 'substract']);
 
 Route::post('divide', [OperationsController::class, 'divide']);
 
-Route::post('multiple-operations', InfiniteOperationsAction::class);
+Route::post('infinite-operations', InfiniteOperationsAction::class);
